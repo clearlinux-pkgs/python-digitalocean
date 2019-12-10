@@ -4,10 +4,10 @@
 #
 Name     : python-digitalocean
 Version  : 1.14.0
-Release  : 2
+Release  : 3
 URL      : https://github.com/koalalorenzo/python-digitalocean/archive/v1.14.0.tar.gz
 Source0  : https://github.com/koalalorenzo/python-digitalocean/archive/v1.14.0.tar.gz
-Summary  : digitalocean.com API to manage Droplets and Images
+Summary  : No detailed summary available
 Group    : Development/Tools
 License  : LGPL-3.0
 Requires: python-digitalocean-license = %{version}-%{release}
@@ -53,14 +53,14 @@ python3 components for the python-digitalocean package.
 
 %prep
 %setup -q -n python-digitalocean-1.14.0
+cd %{_builddir}/python-digitalocean-1.14.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571163224
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1576014166
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -76,7 +76,7 @@ python3 setup.py build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-PYTHONPATH=%{buildroot}/usr/lib/python3.7/site-packages python3 setup.py test || :
+PYTHONPATH=%{buildroot}$(python -c "import sys; print(sys.path[-1])") python setup.py test || :
 %install
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
