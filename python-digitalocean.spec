@@ -7,7 +7,7 @@
 #
 Name     : python-digitalocean
 Version  : 1.17.0
-Release  : 23
+Release  : 24
 URL      : https://github.com/koalalorenzo/python-digitalocean/archive/v1.17.0/python-digitalocean-1.17.0.tar.gz
 Source0  : https://github.com/koalalorenzo/python-digitalocean/archive/v1.17.0/python-digitalocean-1.17.0.tar.gz
 Summary  : digitalocean.com API to manage Droplets and Images
